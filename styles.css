@@ -217,7 +217,7 @@ body {
     .bd-container {
         display:                grid;
         justify-content:        center;
-        grid-template-columns:  90vw;
+        grid-template-columns:  80vw;
         grid-template-areas:    'main';
     }
     
@@ -599,6 +599,11 @@ pre, code, code b, .inlineCode, .snippet, .liCode, .weak, .grey, .bold{
     font-size: 2.5rem;
     margin-top: 5rem;
 }
+@media (min-width: 992px) {
+    .header-title {
+        font-size: 5rem;
+    }
+}
 
 .header-caption {
     margin-top: 10rem;
@@ -607,18 +612,18 @@ pre, code, code b, .inlineCode, .snippet, .liCode, .weak, .grey, .bold{
 .chapters-section {
     display: flex;
     flex-wrap: wrap;
-    align-items: space-between;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
     margin-bottom: 10rem;
     counter-reset: section;
-    margin: 0 -.5rem;
+    margin: 0 -.2rem;
 }
 
 .chapter-item {
     border-collapse: collapse;
-    width: 160px;
+    width: 155px;
     border: 0;
-    margin: .5rem;
+    margin: .4rem .2rem;
     padding: 1rem;
     position: relative;
     font-size: 1.3rem;
@@ -631,6 +636,7 @@ pre, code, code b, .inlineCode, .snippet, .liCode, .weak, .grey, .bold{
 .chapter-item:hover {
     background-color: var(--js-yellow-darker);
     transition: .2s;
+    cursor: pointer;
 }
 .chapter-item::before {
     content: counter(section) '.';
@@ -643,8 +649,19 @@ pre, code, code b, .inlineCode, .snippet, .liCode, .weak, .grey, .bold{
     color: var(--carbon-black-weak);
     counter-increment: section;
 }
-@media ( min-width: 1200px ) {
+
+.chapter-item a:link {
+    text-decoration: none;
+    color: var(--carbon-black);
+}
+@media ( min-width: 768px ) {
+    .chapters-section {
+        margin: 0 -.4rem;
+    }
     .chapter-item {
         font-size: 1.5rem;
+        width: 195px;
+        min-height: 195px;
+        margin: .4rem .4rem;
     }
 }
